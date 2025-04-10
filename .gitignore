@@ -1,0 +1,51 @@
+# ESP-IDF specific
+build/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# C/C++ build artifacts
+*.o
+*.a
+*.elf
+*.bin
+*.map
+*.hex
+*.dis
+*.exe
+
+# vscode
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# CLion
+.idea/
+cmake-build-*/
+
+# PlatformIO
+.pio/
+lib/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Logs
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# Back-up files
+*.bak
+*.orig
