@@ -46,6 +46,37 @@ source ~/.bashrc
 
 ## Building and Flashing
 
+### Connecting USB Device to WSL
+
+If you're using WSL, you'll need to connect your M5NanoC6 device to WSL:
+
+1. Install usbipd-win on Windows (using PowerShell with admin rights):
+
+```powershell
+winget install --interactive --exact dorssel.usbipd-win
+```
+
+2. List available USB devices:
+
+```powershell
+usbipd list
+```
+
+3. Connect the device to WSL:
+
+```powershell
+usbipd bind --busid <BusID>
+usbipd attach --wsl --busid <BusID>
+```
+
+4. Verify in WSL that the device is recognized:
+
+```bash
+ls -l /dev/ttyACM*
+```
+
+### Building and Flashing
+
 1. Set the target to ESP32-C6:
 
 ```bash
@@ -76,4 +107,4 @@ Press `Ctrl+]` to exit the monitor.
 
 ## License
 
-This project is released under the BSD-0 License. See the [LICENSE] file for details.
+This project is released under the BSD-0 License. See the LICENSE file for details.
